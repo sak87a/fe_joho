@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>支払いバーコード</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      padding: 2rem;
+      text-align: center;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      max-width: 90%;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 { font-size: 1.5rem; }
+    img { width: 100%; max-width: 300px; margin-top: 2rem; }
+    .note {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #555;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #125aaa;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>コンビニ支払いバーコード</h2>
+  <p>レジまたは端末でバーコードをご提示ください。</p>
+  <img src="https://barcode.tec-it.com/barcode.ashx?data=FE-8000YEN-0627&code=Code128&translate-esc=false" alt="バーコード">
+  <div class="note">支払い期限：2025年6月27日（金）</div>
+  <button onclick="location.href='complete.html'">支払い完了として進む</button>
+</div>
+
+</body>
+</html>
