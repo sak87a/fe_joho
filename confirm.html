@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>支払い方法確認</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      padding: 2rem;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 90%;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    label {
+      display: block;
+      margin: 1rem 0;
+      font-size: 1.1rem;
+    }
+    input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+    button {
+      width: 100%;
+      background-color: #1976d2;
+      color: white;
+      padding: 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      margin-top: 1.5rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #125aaa;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>支払い方法の選択</h2>
+  <form action="barcode.html" method="get" onsubmit="return validateForm()">
+    <label><input type="radio" name="method" value="convenience"> コンビニ支払い</label>
+    <label><input type="radio" name="method" value="card"> クレジットカード（※非対応）</label>
+    <label><input type="radio" name="method" value="paypay"> PayPay（※非対応）</label>
+    <button type="submit">支払いコードを表示</button>
+  </form>
+</div>
+
+<script>
+  function validateForm() {
+    const methods = document.getElementsByName("method");
+    for (let method of methods) {
+      if (method.checked) {
+        if (method.value === "convenience") return true;
+        alert("このデモではコンビニ支払いのみ対応しています。");
+        return false;
+      }
+    }
+    alert("支払い方法を選択してください。");
+    return false;
+  }
+</script>
+
+</body>
+</html>
